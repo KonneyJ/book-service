@@ -20,8 +20,8 @@ public class AuthorController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public AuthorResponseDto createAuthor(@Valid @RequestBody AuthorRequestDto author) {
-        return service.createAuthor(author);
+    public AuthorResponseDto createAuthor(@Valid @RequestBody AuthorRequestDto newAuthor) {
+        return service.createAuthor(newAuthor);
     }
 
     @GetMapping("/{id}")
