@@ -4,6 +4,7 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.bookservice.dto.book.BookRequestDto;
 import org.bookservice.dto.book.BookResponseDto;
+import org.bookservice.dto.book.BookShortResponseDto;
 import org.bookservice.service.book.BookService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -23,7 +24,7 @@ public class BookController {
     }
 
     @GetMapping
-    public Collection<BookResponseDto> getAllBooks() {
+    public Collection<BookShortResponseDto> getAllBooks() {
         return service.getAllBooks();
     }
 

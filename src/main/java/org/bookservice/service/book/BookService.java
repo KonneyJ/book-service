@@ -2,6 +2,7 @@ package org.bookservice.service.book;
 
 import org.bookservice.dto.book.BookRequestDto;
 import org.bookservice.dto.book.BookResponseDto;
+import org.bookservice.dto.book.BookShortResponseDto;
 
 import java.util.Collection;
 
@@ -9,7 +10,7 @@ public interface BookService {
 
     BookResponseDto createBook(BookRequestDto book);
 
-    Collection<BookResponseDto> getAllBooks();
+    Collection<BookShortResponseDto> getAllBooks();
 
     BookResponseDto getBookById(Long id);
 

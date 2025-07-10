@@ -1,4 +1,4 @@
-package org.bookservice.mapper;
+package org.bookservice.mapper.author;
 
 import org.bookservice.dto.author.AuthorRequestDto;
 import org.bookservice.dto.author.AuthorResponseDto;

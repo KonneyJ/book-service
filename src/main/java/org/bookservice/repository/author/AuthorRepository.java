@@ -1,4 +1,4 @@
-package org.bookservice.repository;
+package org.bookservice.repository.author;
 
 import org.bookservice.model.author.Author;
 import org.springframework.data.jpa.repository.JpaRepository;
