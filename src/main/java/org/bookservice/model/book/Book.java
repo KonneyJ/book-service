@@ -29,7 +29,7 @@ public class Book {
     @Column(name = "publication_year")
     private int publicationYear ;
 
-    @NotBlank(message = "Поле genre не может быть пустым")
+    @NotBlank(message = "Поле publication_year не может быть пустым")
     @Column(name = "genre")
     private String genre;
 }
