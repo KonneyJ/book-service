@@ -11,10 +11,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class BookMapper {
 
-    public static Book toBook(BookRequestDto newBook) {
+    public static Book toBook(BookRequestDto newBook, Author author) {
         return Book.builder()
                 .title(newBook.getTitle())
-                .authorId(newBook.getAuthorId())
+                .author(author)
                 .publicationYear(newBook.getPublicationYear())
                 .genre(newBook.getGenre())
                 .build();

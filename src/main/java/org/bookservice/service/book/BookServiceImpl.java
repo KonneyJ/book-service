@@ -32,7 +32,7 @@ public class BookServiceImpl implements BookService {
             throw new ConflictException("Книга с названием: " + newBook.getTitle() + " автора с именем: " +
                     author.getName() + " уже существует. Добавление невозможно");
         }
-        Book book = repository.save(bookMapper.toBook(newBook));
+        Book book = repository.save(bookMapper.toBook(newBook, author));
         return bookMapper.toBookDto(book, author);
     }
 
@@ -49,7 +49,7 @@ public class BookServiceImpl implements BookService {
     public BookResponseDto getBookById(Long id) {
         Book book = repository.findById(id).orElseThrow(
                 () -> new NotFoundException("Книга с id = " + id + " не найдена"));
-        Author author = checkAuthorExist(book.getAuthorId());
+        Author author = checkAuthorExist(book.getAuthor().getId());
         return bookMapper.toBookDto(book, author);
     }
 
@@ -58,7 +58,7 @@ public class BookServiceImpl implements BookService {
         Book book = repository.findById(id).orElseThrow(
                 () -> new NotFoundException("Книга с id = " + id + " не найдена"));
         Author author = checkAuthorExist(bookToUpdate.getAuthorId());
-        Book bookToSave = bookMapper.toBook(bookToUpdate);
+        Book bookToSave = bookMapper.toBook(bookToUpdate, author);
         bookToSave.setId(book.getId());
         Book updatedBook = repository.save(bookToSave);
         return bookMapper.toBookDto(updatedBook, author);

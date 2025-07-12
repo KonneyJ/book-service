@@ -3,6 +3,7 @@ package org.bookservice.model.book;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.*;
+import org.bookservice.model.author.Author;
 
 @Getter
 @Setter
@@ -23,7 +24,7 @@ public class Book {
 
     @ManyToOne
     @JoinColumn(name = "author_id")
-    private Long authorId;
+    private Author author;
 
     @NotBlank(message = "Поле publication_year не может быть пустым")
     @Column(name = "publication_year")
